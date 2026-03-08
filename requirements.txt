@@ -1,0 +1,8 @@
+econml>=0.14
+lightgbm>=3.3
+scikit-learn>=1.2
+pandas>=1.5
+numpy>=1.23
+scipy>=1.10
+statsmodels>=0.13
+matplotlib>=3.6

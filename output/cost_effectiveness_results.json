@@ -1,0 +1,188 @@
+{
+  "overall": {
+    "deterministic": {
+      "a1c_change": -0.558,
+      "intervention_cost_per_course": 262.08,
+      "acute_care_savings_during_engagement": 977.66,
+      "projected_10yr_complication_savings": 1530.14,
+      "total_savings": 2507.8,
+      "net_cost": -2245.73,
+      "total_qaly_gain": 0.04395,
+      "icer": -51098.65,
+      "cost_saving": "True",
+      "complications": {
+        "myocardial_infarction": {
+          "baseline_10yr_rate": 0.082,
+          "projected_10yr_rate": 0.0728,
+          "absolute_risk_reduction": 0.00921,
+          "events_averted_per_1000": 9.21,
+          "cost_averted_per_person": 414.42,
+          "qaly_gain_per_person": 0.00384,
+          "recode_hr_per_1pct": 1.238
+        },
+        "stroke": {
+          "baseline_10yr_rate": 0.055,
+          "projected_10yr_rate": 0.0456,
+          "absolute_risk_reduction": 0.00942,
+          "events_averted_per_1000": 9.42,
+          "cost_averted_per_person": 517.86,
+          "qaly_gain_per_person": 0.0117,
+          "recode_hr_per_1pct": 1.4
+        },
+        "renal_failure": {
+          "baseline_10yr_rate": 0.045,
+          "projected_10yr_rate": 0.0417,
+          "absolute_risk_reduction": 0.00331,
+          "events_averted_per_1000": 3.31,
+          "cost_averted_per_person": 281.31,
+          "qaly_gain_per_person": 0.00196,
+          "recode_hr_per_1pct": 1.147
+        },
+        "severe_vision_loss": {
+          "baseline_10yr_rate": 0.075,
+          "projected_10yr_rate": 0.0692,
+          "absolute_risk_reduction": 0.00583,
+          "events_averted_per_1000": 5.83,
+          "cost_averted_per_person": 87.38,
+          "qaly_gain_per_person": 0.00221,
+          "recode_hr_per_1pct": 1.156
+        },
+        "congestive_heart_failure": {
+          "baseline_10yr_rate": 0.065,
+          "projected_10yr_rate": 0.0578,
+          "absolute_risk_reduction": 0.00716,
+          "events_averted_per_1000": 7.16,
+          "cost_averted_per_person": 229.17,
+          "qaly_gain_per_person": 0.00407,
+          "recode_hr_per_1pct": 1.233
+        },
+        "all_cause_mortality": {
+          "baseline_10yr_rate": 0.065,
+          "projected_10yr_rate": 0.0593,
+          "absolute_risk_reduction": 0.00575,
+          "events_averted_per_1000": 5.75,
+          "cost_averted_per_person": 0.0,
+          "qaly_gain_per_person": 0.02017,
+          "recode_hr_per_1pct": 1.18
+        }
+      }
+    },
+    "probabilistic": {
+      "prob_cost_saving": 0.998,
+      "prob_cost_effective_50k": 1.0,
+      "prob_cost_effective_100k": 1.0,
+      "net_cost_mean": -2273.68,
+      "net_cost_95ci": [
+        -3673.27,
+        -859.05
+      ],
+      "qaly_gain_mean": 0.04334,
+      "qaly_gain_95ci": [
+        0.00835,
+        0.07577
+      ],
+      "n_simulations": 10000
+    }
+  },
+  "overall_last_value": {
+    "deterministic": {
+      "a1c_change": -0.289,
+      "intervention_cost_per_course": 262.08,
+      "acute_care_savings_during_engagement": 977.66,
+      "projected_10yr_complication_savings": 817.67,
+      "total_savings": 1795.33,
+      "net_cost": -1533.25,
+      "total_qaly_gain": 0.02343,
+      "icer": -65450.7,
+      "cost_saving": "True",
+      "complications": {
+        "myocardial_infarction": {
+          "baseline_10yr_rate": 0.082,
+          "projected_10yr_rate": 0.0771,
+          "absolute_risk_reduction": 0.00491,
+          "events_averted_per_1000": 4.91,
+          "cost_averted_per_person": 220.8,
+          "qaly_gain_per_person": 0.00205,
+          "recode_hr_per_1pct": 1.238
+        },
+        "stroke": {
+          "baseline_10yr_rate": 0.055,
+          "projected_10yr_rate": 0.0499,
+          "absolute_risk_reduction": 0.0051,
+          "events_averted_per_1000": 5.1,
+          "cost_averted_per_person": 280.33,
+          "qaly_gain_per_person": 0.00634,
+          "recode_hr_per_1pct": 1.4
+        },
+        "renal_failure": {
+          "baseline_10yr_rate": 0.045,
+          "projected_10yr_rate": 0.0433,
+          "absolute_risk_reduction": 0.00175,
+          "events_averted_per_1000": 1.75,
+          "cost_averted_per_person": 148.38,
+          "qaly_gain_per_person": 0.00103,
+          "recode_hr_per_1pct": 1.147
+        },
+        "severe_vision_loss": {
+          "baseline_10yr_rate": 0.075,
+          "projected_10yr_rate": 0.0719,
+          "absolute_risk_reduction": 0.00308,
+          "events_averted_per_1000": 3.08,
+          "cost_averted_per_person": 46.14,
+          "qaly_gain_per_person": 0.00117,
+          "recode_hr_per_1pct": 1.156
+        },
+        "congestive_heart_failure": {
+          "baseline_10yr_rate": 0.065,
+          "projected_10yr_rate": 0.0612,
+          "absolute_risk_reduction": 0.00381,
+          "events_averted_per_1000": 3.81,
+          "cost_averted_per_person": 122.03,
+          "qaly_gain_per_person": 0.00217,
+          "recode_hr_per_1pct": 1.233
+        },
+        "all_cause_mortality": {
+          "baseline_10yr_rate": 0.065,
+          "projected_10yr_rate": 0.062,
+          "absolute_risk_reduction": 0.00304,
+          "events_averted_per_1000": 3.04,
+          "cost_averted_per_person": 0.0,
+          "qaly_gain_per_person": 0.01068,
+          "recode_hr_per_1pct": 1.18
+        }
+      }
+    },
+    "probabilistic": {
+      "prob_cost_saving": 0.998,
+      "prob_cost_effective_50k": 1.0,
+      "prob_cost_effective_100k": 1.0,
+      "net_cost_mean": -1577.06,
+      "net_cost_95ci": [
+        -2707.73,
+        -505.64
+      ],
+      "qaly_gain_mean": 0.02318,
+      "qaly_gain_95ci": [
+        0.00085,
+        0.04492
+      ],
+      "n_simulations": 10000
+    }
+  },
+  "cheers_metadata": {
+    "perspective": "Medicaid payer",
+    "time_horizon": "10-year projection for complications; engagement period for acute care",
+    "discount_rate": "3% annual",
+    "currency_year": "2024 USD",
+    "outcome_measure": "QALYs",
+    "sensitivity_analysis": "Probabilistic (Monte Carlo, 10,000 draws)",
+    "risk_equations": "RECODe (Basu et al. Lancet Diabetes Endocrinol 2017; Basu et al. Diabetes Care 2018)",
+    "data_sources": [
+      "RECODe equations (Basu et al. Lancet Diabetes Endocrinol 2017) for 10-year complication risk",
+      "RECODe validation (Basu et al. Diabetes Care 2018) in MESA and JHS cohorts",
+      "Baum et al. NEJM Catalyst 2024 for intervention costs",
+      "T-MSIS for Medicaid complication costs",
+      "Beaudet et al. 2014; Sullivan PW 2011 for utility weights"
+    ]
+  }
+}

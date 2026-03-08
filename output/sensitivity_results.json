@@ -1,0 +1,55 @@
+{
+  "time_adjusted": {
+    "label": "DML, time-adjusted",
+    "ate": -0.2363,
+    "ci_lo": -0.5168,
+    "ci_hi": 0.0442,
+    "cohens_d": 0.192,
+    "p_value": 0.0988,
+    "n": 369,
+    "n_treated": 116,
+    "n_control": 253,
+    "pooled_sd": 1.2323,
+    "mean_days_to_followup_treated": 211.1,
+    "mean_days_to_followup_control": 211.6
+  },
+  "subgroup_a1c_ge8": {
+    "label": "DML, baseline A1c >= 8.0",
+    "ate": -1.0081,
+    "ci_lo": -2.0801,
+    "ci_hi": 0.0639,
+    "cohens_d": 0.44,
+    "p_value": 0.0653,
+    "n": 73,
+    "n_treated": 25,
+    "n_control": 48,
+    "pooled_sd": 2.2905,
+    "mean_baseline_a1c": 9.73
+  },
+  "subgroup_a1c_ge9": {
+    "label": "DML, baseline A1c >= 9.0",
+    "ate": -1.0099,
+    "ci_lo": -2.3999,
+    "ci_hi": 0.3802,
+    "cohens_d": 0.415,
+    "p_value": 0.1545,
+    "n": 43,
+    "n_treated": 15,
+    "n_control": 28,
+    "pooled_sd": 2.4349,
+    "mean_baseline_a1c": 10.72
+  },
+  "binary_control": {
+    "label": "Binary: achieved control (A1c < 8) | baseline >= 8",
+    "ate": 0.0929,
+    "ci_lo": -0.1223,
+    "ci_hi": 0.3081,
+    "p_value": 0.3976,
+    "rate_treated": 0.32,
+    "rate_control": 0.312,
+    "nnt": 10.8,
+    "n": 73,
+    "n_treated": 25,
+    "n_control": 48
+  }
+}

@@ -1,0 +1,20 @@
+Variable,Treated (N=114),Control (N=114),SMD
+"Age, years",48.7 ± 12.9,46.7 ± 13.2,0.151
+"Baseline HbA1c, %",6.9 ± 1.9,7.1 ± 1.9,-0.102
+Risk percentile,82.2 ± 20.1,81.3 ± 17.1,0.048
+"Chronic conditions, N",2.5 ± 1.7,2.4 ± 1.3,0.046
+"Baseline ED visits, 6mo",2.4 ± 3.4,1.8 ± 3.2,0.174
+"Baseline IP admissions, 6mo",0.1 ± 0.6,0.1 ± 0.3,0.183
+"Baseline PCP visits, 6mo",6.6 ± 5.6,6.4 ± 6.0,0.033
+Behavioral health dx,67 (58.8%),53 (46.5%),0.247
+Hypertension,71 (62.3%),73 (64.0%),-0.036
+CKD,0 (0.0%),0 (0.0%),0.000
+Heart failure,7 (6.1%),11 (9.6%),-0.130
+Pulmonary disease,11 (9.6%),12 (10.5%),-0.029
+Gender: Female,85 (74.6%),80 (70.2%),
+Gender: Male,28 (24.6%),34 (29.8%),
+Gender: Other,1 (0.9%),0 (0.0%),
+Race: Asian,6 (5.3%),4 (3.5%),
+Race: Black or African American,61 (53.5%),72 (63.2%),
+Race: Unknown,3 (2.6%),2 (1.8%),
+Race: White,44 (38.6%),36 (31.6%),

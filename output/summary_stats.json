@@ -1,0 +1,40 @@
+{
+  "total_diabetes_cohort": 372,
+  "n_treated": 118,
+  "n_control": 254,
+  "n_matched_pairs": 114,
+  "match_rate_pct": 96.6,
+  "baseline_a1c_treated": 6.91,
+  "baseline_a1c_control": 7.11,
+  "followup_a1c_treated": 6.54,
+  "followup_a1c_control": 6.9,
+  "dml_ate": -0.458,
+  "dml_ci": "(-0.822, -0.094)",
+  "ancova_effect": -0.253,
+  "ancova_ci": "(-0.549, 0.043)",
+  "ancova_pvalue": 0.0939,
+  "did_a1c_effect": -0.171,
+  "did_a1c_ci": "(-0.504, 0.161)",
+  "did_a1c_pvalue": 0.3134,
+  "cf_ate": -0.332,
+  "cf_ate_ci": "(-0.737, 0.074)",
+  "e_value_point": 2.11,
+  "e_value_ci": 1.34,
+  "mde": 0.475,
+  "observed_d": 0.358,
+  "posthoc_power": 0.771,
+  "ard": 0.02,
+  "nnt": 50.0,
+  "dose_response": {
+    "hedis_activation_span": {
+      "rho": 0.003,
+      "rho_p": 0.9759,
+      "trend_p": 0.0703
+    },
+    "other_activation_span": {
+      "rho": 0.171,
+      "rho_p": 0.0683,
+      "trend_p": 0.0548
+    }
+  }
+}

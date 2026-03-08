@@ -1,0 +1,193 @@
+{
+  "propensity_score": {
+    "ps_treated_min": 0.138,
+    "ps_treated_max": 0.991,
+    "ps_treated_mean": 0.417,
+    "ps_control_min": 0.11,
+    "ps_control_max": 0.851,
+    "ps_control_mean": 0.272,
+    "common_support_min": 0.138,
+    "common_support_max": 0.851,
+    "pct_in_common_support": 92.2,
+    "n_trimmed": 2,
+    "n_after_trimming": 369
+  },
+  "covariate_balance": {
+    "unmatched": {
+      "age": 0.056,
+      "baseline_a1c": 0.124,
+      "risk_percentile": 0.25,
+      "comorbidity_count": 0.447,
+      "pre_ed": 0.35,
+      "pre_ip": 0.255,
+      "pre_pcp": 0.618,
+      "has_bh": 0.281,
+      "has_htn": 0.328,
+      "has_chf": 0.203,
+      "has_pulm": 0.236,
+      "polypharmacy": 0.027,
+      "high_ed_ip": 0.348
+    },
+    "matched": {
+      "age": 0.151,
+      "baseline_a1c": 0.102,
+      "risk_percentile": 0.048,
+      "comorbidity_count": 0.046,
+      "pre_ed": 0.174,
+      "pre_ip": 0.183,
+      "pre_pcp": 0.033,
+      "has_bh": 0.247,
+      "has_htn": 0.036,
+      "has_chf": 0.13,
+      "has_pulm": 0.029,
+      "polypharmacy": 0.374,
+      "high_ed_ip": 0.133
+    },
+    "n_fail_010": 8,
+    "n_fail_020": 2
+  },
+  "dml_full_cohort": {
+    "n": 369,
+    "n_treated": 116,
+    "n_control": 253,
+    "ate": -0.289,
+    "ci_lower": -0.57,
+    "ci_upper": -0.007,
+    "cohens_d": 0.23,
+    "cohens_d_ci_lower": 0.01,
+    "cohens_d_ci_upper": 0.46,
+    "pooled_sd": 1.232
+  },
+  "dml_matched": {
+    "n": 228,
+    "ate": -0.323,
+    "ci_lower": -0.646,
+    "ci_upper": -0.0,
+    "cohens_d": 0.25,
+    "pooled_sd": 1.275
+  },
+  "grf_full_cohort": {
+    "n": 369,
+    "ate": -0.249,
+    "ci_lower": -0.683,
+    "ci_upper": 0.186,
+    "feature_importance": {
+      "age": 0.142,
+      "baseline_a1c": 0.56,
+      "risk_percentile": 0.087,
+      "comorbidity_count": 0.043,
+      "pre_ed": 0.029,
+      "pre_ip": 0.0,
+      "pre_pcp": 0.083,
+      "has_bh": 0.027,
+      "has_htn": 0.008,
+      "has_chf": 0.0,
+      "has_pulm": 0.0,
+      "polypharmacy": 0.014,
+      "high_ed_ip": 0.006
+    },
+    "gate_quartiles": {
+      "Q1 (highest benefit)": {
+        "n": 93,
+        "n_treated": 32,
+        "n_control": 61,
+        "mean_predicted_cate": -0.579,
+        "gate": -0.579,
+        "gate_ci_lower": -1.342,
+        "gate_ci_upper": 0.183,
+        "mean_baseline_a1c": 9.2,
+        "observed_change_treated": -1.282,
+        "observed_change_control": -0.464,
+        "mean_age": 51.3
+      },
+      "Q2": {
+        "n": 92,
+        "n_treated": 24,
+        "n_control": 68,
+        "mean_predicted_cate": -0.188,
+        "gate": -0.188,
+        "gate_ci_lower": -0.463,
+        "gate_ci_upper": 0.087,
+        "mean_baseline_a1c": 6.1,
+        "observed_change_treated": -0.021,
+        "observed_change_control": -0.017,
+        "mean_age": 42.3
+      },
+      "Q3": {
+        "n": 92,
+        "n_treated": 20,
+        "n_control": 72,
+        "mean_predicted_cate": -0.135,
+        "gate": -0.135,
+        "gate_ci_lower": -0.358,
+        "gate_ci_upper": 0.087,
+        "mean_baseline_a1c": 5.9,
+        "observed_change_treated": 0.023,
+        "observed_change_control": 0.022,
+        "mean_age": 46.8
+      },
+      "Q4 (lowest benefit)": {
+        "n": 92,
+        "n_treated": 40,
+        "n_control": 52,
+        "mean_predicted_cate": -0.089,
+        "gate": -0.089,
+        "gate_ci_lower": -0.298,
+        "gate_ci_upper": 0.121,
+        "mean_baseline_a1c": 5.7,
+        "observed_change_treated": -0.051,
+        "observed_change_control": -0.061,
+        "mean_age": 51.8
+      }
+    },
+    "blp_heterogeneity_coef": 2.149,
+    "blp_heterogeneity_pval": 0.0732,
+    "blp_heterogeneity_ci": [
+      -0.202,
+      4.5
+    ],
+    "blp_ate_coef": -0.286,
+    "blp_ate_pval": 0.0424
+  },
+  "rtm_sensitivity": {
+    "treatment_coef": 1.925,
+    "treatment_ci": [
+      0.295,
+      3.555
+    ],
+    "treatment_pval": 0.0206,
+    "interaction_coef": -0.309,
+    "interaction_ci": [
+      -0.567,
+      -0.05
+    ],
+    "interaction_pval": 0.0193
+  },
+  "negative_control": {
+    "outcome": "pre_period_pcp_visits",
+    "ate": 2.391,
+    "ci_lower": 1.105,
+    "ci_upper": 3.677,
+    "null_included": false
+  },
+  "e_value": {
+    "point": 1.78,
+    "ci_bound": 1.08,
+    "rr_point": 1.24,
+    "cohens_d": 0.234
+  },
+  "descriptives": {
+    "full_cohort_n": 371,
+    "full_treated_n": 118,
+    "full_control_n": 253,
+    "trimmed_n": 369,
+    "treated_baseline_a1c_mean": 6.9,
+    "treated_baseline_a1c_sd": 1.9,
+    "treated_followup_a1c_mean": 6.52,
+    "treated_a1c_change_mean": -0.38,
+    "control_baseline_a1c_mean": 6.67,
+    "control_baseline_a1c_sd": 1.7,
+    "control_followup_a1c_mean": 6.55,
+    "control_a1c_change_mean": -0.12
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "mean_a1c_full_cohort": {
+    "label": "DML, mean A1c, full cohort",
+    "ate": -0.5584,
+    "ci_lo": -1.0059,
+    "ci_hi": -0.1109,
+    "cohens_d": 0.408,
+    "p_value": 0.0145,
+    "n": 261,
+    "n_treated": 78,
+    "n_control": 183,
+    "pooled_sd": 1.3688
+  },
+  "mean_a1c_subgroup_ge8": {
+    "label": "DML, mean A1c, baseline >= 8",
+    "ate": -0.9507,
+    "ci_lo": -2.7161,
+    "ci_hi": 0.8147,
+    "cohens_d": 0.368,
+    "p_value": 0.2912,
+    "n": 47,
+    "n_treated": 16,
+    "n_control": 31,
+    "pooled_sd": 2.5857
+  },
+  "comparison": {
+    "last_value": {
+      "label": "DML, last A1c (comparison)",
+      "ate": -0.402,
+      "ci_lo": -0.8131,
+      "ci_hi": 0.0092,
+      "cohens_d": 0.293,
+      "p_value": 0.0553,
+      "n": 261,
+      "n_treated": 78,
+      "n_control": 183,
+      "pooled_sd": 1.3708
+    },
+    "mean_value": {
+      "label": "DML, mean A1c (comparison)",
+      "ate": -0.5584,
+      "ci_lo": -1.0059,
+      "ci_hi": -0.1109,
+      "cohens_d": 0.408,
+      "p_value": 0.0145,
+      "n": 261,
+      "n_treated": 78,
+      "n_control": 183,
+      "pooled_sd": 1.3688
+    },
+    "note": "Both run on identical cohort for direct comparison"
+  },
+  "metadata": {
+    "description": "Mean A1c sensitivity analysis (Baum suggestion)",
+    "baseline_window": "6 months before index date",
+    "followup_window": "6 months after index date",
+    "aggregation": "mean of all A1c values in window (vs. last/most recent)"
+  }
+}

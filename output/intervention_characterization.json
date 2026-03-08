@@ -1,0 +1,81 @@
+{
+  "n_treated_with_encounters": 93,
+  "n_treated_total": 114,
+  "pct_matched": 81.6,
+  "total_occurred_encounters": 668,
+  "encounters_per_patient_median": 3.0,
+  "encounters_per_patient_mean": 7.2,
+  "encounters_per_patient_iqr": "2-7",
+  "role_summary": {
+    "Pharmacy": {
+      "n_encounters": 274,
+      "n_patients": 80,
+      "pct_patients": 86.0
+    },
+    "CHW": {
+      "n_encounters": 243,
+      "n_patients": 35,
+      "pct_patients": 37.6
+    },
+    "Care coordinator": {
+      "n_encounters": 105,
+      "n_patients": 45,
+      "pct_patients": 48.4
+    },
+    "Therapist": {
+      "n_encounters": 44,
+      "n_patients": 9,
+      "pct_patients": 9.7
+    },
+    "Other": {
+      "n_encounters": 2,
+      "n_patients": 2,
+      "pct_patients": 2.2
+    }
+  },
+  "contact_modality": {
+    "PHONE_CALL": 412,
+    "EMAIL": 78,
+    "SMS_TEXT": 67,
+    "VIDEO_VISIT": 30,
+    "EHR_COMMUNICATION": 30,
+    "PHONE_CALL_CMT": 16,
+    "OTHER_INPERSON": 10,
+    "HOME_VISIT": 9,
+    "HOSPITAL": 6,
+    "CBO": 4
+  },
+  "encounter_types": {
+    "PATIENT_OUTREACH": 138,
+    "PROVIDER_COORDINATION": 116,
+    "UNSCHEDULED_CHECKIN": 106,
+    "SCHEDULED_CHECKIN": 64,
+    "INBOUND_REQUEST": 54,
+    "CARE_DELIVERY_COORDINATION": 54,
+    "THERAPY_COUNSELING": 22,
+    "MEET_THE_PATIENT": 22,
+    "REFERRAL": 22,
+    "ADDENDUM": 12
+  },
+  "total_goals": 689,
+  "goal_categories": {
+    "DEFAULT": 416,
+    "MEDICATION_ADHERENCE": 100,
+    "CARE": 27,
+    "HYPERTENSION": 26,
+    "INSURANCE_COVERAGE": 18,
+    "PCP_APPOINTMENT": 17,
+    "DIABETES": 14,
+    "FOOD_INSECURITY": 8,
+    "OTHER_MENTAL_BEHAVIORAL": 7,
+    "HOUSING_INSECURITY": 7
+  },
+  "goal_status": {
+    "COMPLETED": 449,
+    "ACTIVE": 116,
+    "INCOMPLETE": 106,
+    "NOT_STARTED": 14,
+    "PROVISIONALLY_COMPLETED": 4
+  },
+  "goal_completion_rate": 65.2
+}
