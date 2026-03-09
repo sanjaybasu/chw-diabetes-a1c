@@ -1,0 +1,295 @@
+{
+  "n_treated_total": 118,
+  "n_with_encounters": 97,
+  "n_with_in_window_encounters": 117,
+  "total_in_window_encounters": 546,
+  "spearman_correlations": {
+    "n_care_coord": {
+      "spearman_rho": -0.014,
+      "p_value": 0.8768
+    },
+    "n_chw": {
+      "spearman_rho": -0.103,
+      "p_value": 0.27
+    },
+    "n_other": {
+      "spearman_rho": -0.087,
+      "p_value": 0.351
+    },
+    "n_pharmacy": {
+      "spearman_rho": -0.054,
+      "p_value": 0.5639
+    },
+    "n_therapist": {
+      "spearman_rho": -0.136,
+      "p_value": 0.1444
+    },
+    "n_total_encounters": {
+      "spearman_rho": -0.086,
+      "p_value": 0.3566
+    },
+    "pct_med_notes": {
+      "spearman_rho": 0.015,
+      "p_value": 0.8712
+    },
+    "pct_insulin_notes": {
+      "spearman_rho": -0.046,
+      "p_value": 0.623
+    },
+    "pct_cgm_notes": {
+      "spearman_rho": 0.043,
+      "p_value": 0.6472
+    },
+    "pct_nutrition_notes": {
+      "spearman_rho": -0.134,
+      "p_value": 0.1495
+    },
+    "pct_diabetes_notes": {
+      "spearman_rho": -0.086,
+      "p_value": 0.3551
+    },
+    "pct_appointment_notes": {
+      "spearman_rho": -0.094,
+      "p_value": 0.311
+    },
+    "has_any_diabetes_note": {
+      "spearman_rho": -0.101,
+      "p_value": 0.2769
+    },
+    "n_total_goals": {
+      "spearman_rho": -0.055,
+      "p_value": 0.554
+    },
+    "n_completed_goals": {
+      "spearman_rho": 0.019,
+      "p_value": 0.8403
+    },
+    "n_med_adherence_goals": {
+      "spearman_rho": -0.007,
+      "p_value": 0.9409
+    },
+    "n_diabetes_goals": {
+      "spearman_rho": 0.002,
+      "p_value": 0.9845
+    },
+    "goal_completion_rate": {
+      "spearman_rho": 0.047,
+      "p_value": 0.6122
+    }
+  },
+  "adjusted_ols_individual": {
+    "n_pharmacy": {
+      "coefficient": -0.0074,
+      "ci_lower": -0.1082,
+      "ci_upper": 0.0933,
+      "p_value": 0.885,
+      "n": 117
+    },
+    "n_chw": {
+      "coefficient": 0.0003,
+      "ci_lower": -0.0651,
+      "ci_upper": 0.0658,
+      "p_value": 0.9921,
+      "n": 117
+    },
+    "pct_med_notes": {
+      "coefficient": 0.033,
+      "ci_lower": -0.6149,
+      "ci_upper": 0.681,
+      "p_value": 0.9204,
+      "n": 117
+    },
+    "n_total_encounters": {
+      "coefficient": -0.0056,
+      "ci_lower": -0.0431,
+      "ci_upper": 0.0319,
+      "p_value": 0.7689,
+      "n": 117
+    }
+  },
+  "adjusted_ols_joint": {
+    "n_pharmacy": {
+      "coefficient": 0.0418,
+      "ci_lower": -0.0706,
+      "ci_upper": 0.1542,
+      "p_value": 0.4662
+    },
+    "n_chw": {
+      "coefficient": 0.096,
+      "ci_lower": -0.0217,
+      "ci_upper": 0.2138,
+      "p_value": 0.1098
+    },
+    "pct_med_notes": {
+      "coefficient": 0.0066,
+      "ci_lower": -0.6521,
+      "ci_upper": 0.6654,
+      "p_value": 0.9843
+    },
+    "n_total_encounters": {
+      "coefficient": -0.0732,
+      "ci_lower": -0.1295,
+      "ci_upper": -0.017,
+      "p_value": 0.0108
+    },
+    "r_squared": 0.428,
+    "n": 117
+  },
+  "descriptive_stats": {
+    "n_care_coord": {
+      "mean": 0.62,
+      "sd": 1.22,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 7.0,
+      "pct_nonzero": 30.8
+    },
+    "n_chw": {
+      "mean": 1.64,
+      "sd": 4.62,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 29.0,
+      "pct_nonzero": 23.9
+    },
+    "n_other": {
+      "mean": 0.02,
+      "sd": 0.13,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 1.7
+    },
+    "n_pharmacy": {
+      "mean": 2.09,
+      "sd": 2.97,
+      "median": 2.0,
+      "min": 0.0,
+      "max": 19.0,
+      "pct_nonzero": 68.4
+    },
+    "n_therapist": {
+      "mean": 0.3,
+      "sd": 1.51,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 14.0,
+      "pct_nonzero": 6.8
+    },
+    "n_total_encounters": {
+      "mean": 4.67,
+      "sd": 7.84,
+      "median": 2.0,
+      "min": 0.0,
+      "max": 44.0,
+      "pct_nonzero": 81.2
+    },
+    "pct_med_notes": {
+      "mean": 0.27,
+      "sd": 0.31,
+      "median": 0.17,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 59.0
+    },
+    "pct_insulin_notes": {
+      "mean": 0.04,
+      "sd": 0.15,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 8.5
+    },
+    "pct_cgm_notes": {
+      "mean": 0.11,
+      "sd": 0.25,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 24.8
+    },
+    "pct_nutrition_notes": {
+      "mean": 0.02,
+      "sd": 0.1,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 12.0
+    },
+    "pct_diabetes_notes": {
+      "mean": 0.07,
+      "sd": 0.21,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 17.9
+    },
+    "pct_appointment_notes": {
+      "mean": 0.1,
+      "sd": 0.22,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 23.9
+    },
+    "has_any_diabetes_note": {
+      "mean": 0.18,
+      "sd": 0.39,
+      "median": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 17.9
+    },
+    "n_total_goals": {
+      "mean": 6.15,
+      "sd": 5.13,
+      "median": 5.0,
+      "min": 1,
+      "max": 26,
+      "pct_nonzero": 100.0
+    },
+    "n_completed_goals": {
+      "mean": 4.03,
+      "sd": 3.58,
+      "median": 3.0,
+      "min": 0,
+      "max": 23,
+      "pct_nonzero": 98.3
+    },
+    "n_med_adherence_goals": {
+      "mean": 0.87,
+      "sd": 0.79,
+      "median": 1.0,
+      "min": 0,
+      "max": 5,
+      "pct_nonzero": 68.4
+    },
+    "n_diabetes_goals": {
+      "mean": 0.13,
+      "sd": 0.36,
+      "median": 0.0,
+      "min": 0,
+      "max": 2,
+      "pct_nonzero": 12.0
+    },
+    "goal_completion_rate": {
+      "mean": 0.77,
+      "sd": 0.27,
+      "median": 0.88,
+      "min": 0.0,
+      "max": 1.0,
+      "pct_nonzero": 98.3
+    }
+  },
+  "confounders": [
+    "baseline_a1c",
+    "age",
+    "comorbidity_count"
+  ],
+  "prespecified_features": [
+    "n_pharmacy",
+    "n_chw",
+    "pct_med_notes",
+    "n_total_encounters"
+  ]
+}
