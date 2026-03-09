@@ -77,3 +77,4 @@ Mapping of key quantitative claims in the manuscript to the script and output th
 | Prob cost-saving (primary) | 99.8% | `code/cost_effectiveness.py` | `output/cost_effectiveness_results.json` | `overall.probabilistic.prob_cost_saving` |
 | QALY gain (primary) | 0.044 | `code/cost_effectiveness.py` | `output/cost_effectiveness_results.json` | `overall.deterministic.total_qaly_gain` |
 | Intervention cost per course | $262 | `code/cost_effectiveness.py` | `output/cost_effectiveness_results.json` | `overall.deterministic.intervention_cost_per_course` |
+| Total encounters dose-response (joint model) | coef = −0.073, P = 0.011 | `code/activity_outcome_analysis.py` | `output/activity_outcome_results.json` | `adjusted_ols_joint.n_total_encounters` |
