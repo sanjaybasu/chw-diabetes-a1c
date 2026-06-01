@@ -1,0 +1,9 @@
+# Protected health information — never commit patient-level data
+data/
+*.parquet
+*.csv
+# Generated outputs (results JSON + figures) — regenerate by running the pipeline
+output/
+.DS_Store
+__pycache__/
+*.pyc
