@@ -38,7 +38,9 @@ python code/figures.py               # writes output/figures/
 - **Heterogeneity.** Generalized random forest (EconML `CausalForestDML`) with a best
   linear projection test and a parametric treatment-by-baseline-HbA1c interaction.
 - **Robustness.** Inverse-probability-of-censoring weighting for differential follow-up
-  availability; a time-zero-aligned analysis anchoring both groups at the
-  identification date; a follow-up-window sensitivity grid; and an E-value.
+  availability; a time-zero-aligned analysis anchoring both groups at the identification
+  date (most-proximate baseline); a grace-period target-trial emulation classifying
+  treatment by activation within a fixed window of identification; a follow-up-window
+  sensitivity grid; and an E-value.
 
 See `DATA_NOTE.md` for input-data structure and provenance.
