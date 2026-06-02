@@ -228,24 +228,40 @@ print(f"IPCW: inclusion treated {inc_by_t[1]:.3f} vs control {inc_by_t[0]:.3f} (
       f"weighted ATE {results['ipcw']['ipcw_weighted_primary']['ate']}")
 
 # ============================================================
-# 6. TIME-ZERO ALIGNMENT (common identification-date index) + immortal time
+# 6. TIME-ZERO ALIGNMENT + immortal time + grace-period target-trial emulation
 # ============================================================
+# Both groups anchored at the identification (first-targeting) date. To retain power,
+# baseline is the most-proximate HbA1c within 12 months before to 90 days after
+# identification (most engaged members' first HbA1c is recorded near identification),
+# and follow-up is the mean over 90-365 days after identification.
 tsd = pd.read_parquet(RAW/"treated_status_dates.parquet")
 for c in ['targeted_at','activated_at','index_date']: tsd[c]=pd.to_datetime(tsd[c])
 imm = (tsd['activated_at']-tsd['targeted_at']).dt.days.dropna()
 results['immortal_time'] = dict(median=float(imm.median()), q1=float(imm.quantile(.25)), q3=float(imm.quantile(.75)),
                                 mean=round(float(imm.mean()),1), min=int(imm.min()), max=int(imm.max()), n=int(len(imm)))
 tmap = tsd.set_index('person_id')['targeted_at'].to_dict()
+amap = tsd.set_index('person_id')['activated_at'].to_dict()
 pub2 = pub.copy()
-pub2['ta_index'] = pd.to_datetime(pub2.apply(lambda r: tmap.get(r['way_id'], r['index_date']) if r['treated']==1 else r['index_date'], axis=1))
-La = labs.merge(pub2[['way_id','ta_index']].rename(columns={'way_id':'person_id'}), on='person_id', how='inner')
-bla = La[(La.collection_date>=La.ta_index-pd.DateOffset(months=6))&(La.collection_date<La.ta_index)].groupby('person_id')['a1c'].mean().rename('bl_mean')
-fua = La[(La.collection_date>=La.ta_index+pd.Timedelta(days=90))&(La.collection_date<=La.ta_index+pd.Timedelta(days=365))].groupby('person_id')['a1c'].mean().rename('fu_mean')
+pub2['id_date'] = pd.to_datetime(pub2.apply(lambda r: tmap.get(r['way_id'], r['index_date']) if r['treated']==1 else r['index_date'], axis=1))
+pub2['act_gap'] = pub2['way_id'].map(lambda w: (amap.get(w)-tmap.get(w)).days if (w in amap and w in tmap and pd.notna(amap.get(w)) and pd.notna(tmap.get(w))) else np.nan)
+La = labs.merge(pub2[['way_id','id_date']].rename(columns={'way_id':'person_id'}), on='person_id', how='inner')
+bla = La[(La.collection_date>=La.id_date-pd.Timedelta(days=365))&(La.collection_date<La.id_date+pd.Timedelta(days=90))].groupby('person_id')['a1c'].last().rename('bl_mean')
+fua = La[(La.collection_date>=La.id_date+pd.Timedelta(days=90))&(La.collection_date<=La.id_date+pd.Timedelta(days=365))].groupby('person_id')['a1c'].mean().rename('fu_mean')
 da = pub2.merge(bla,left_on='way_id',right_index=True,how='left').merge(fua,left_on='way_id',right_index=True,how='left')
 da['ych']=da['fu_mean']-da['bl_mean']
+# (a) time-zero-aligned (as-treated): treatment = ever activated
 dat, cova = prep(da,'ych','bl_mean')
 results['time_aligned'] = dml_fit(dat['ych'].values, dat['treated'].values.astype(float), dat[cova].values.astype(float))
-print(f"immortal time median {results['immortal_time']['median']}d; time-aligned ATE {results['time_aligned']['ate']} N={results['time_aligned']['n']}")
+# (b) grace-period target-trial emulation: treatment = activation within 365 d of identification
+#     (avoids classifying on the future; later activators enter the comparison arm -> conservative)
+da['T_tt'] = ((da['treated']==1) & (da['act_gap']<=365)).astype(int)
+GP = 365
+dtt = da.dropna(subset=cova+['ych']).copy()
+ps_tt = LogisticRegression(max_iter=1000).fit(dtt[cova].values.astype(float), dtt['T_tt'].values.astype(float)).predict_proba(dtt[cova].values.astype(float))[:,1]
+dtt = dtt[(ps_tt>=0.05)&(ps_tt<=0.95)].copy()
+results['target_trial'] = dml_fit(dtt['ych'].values, dtt['T_tt'].values.astype(float), dtt[cova].values.astype(float)) | {'grace_period_days': GP}
+print(f"immortal {results['immortal_time']['median']}d; time-aligned ATE {results['time_aligned']['ate']} N={results['time_aligned']['n']}; "
+      f"target-trial ATE {results['target_trial']['ate']} (p={results['target_trial']['p_value']}) N={results['target_trial']['n']}")
 
 _atomic_json(results, OUT/"results.json")
 print(f"\nSaved {OUT/'results.json'}")

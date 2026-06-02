@@ -113,7 +113,8 @@ rows=[("Primary: mean HbA1c, 90-365 d (N=369)",P['ate'],P['ci_lo'],P['ci_hi']),
       ("Mean, 0-6 mo (N=261)",g['mean_followup_0_6mo']['mean']['ate'],g['mean_followup_0_6mo']['mean']['ci_lo'],g['mean_followup_0_6mo']['mean']['ci_hi']),
       ("Mean, 90 d-6 mo (N=210)",g['mean_followup_90d_6mo']['mean']['ate'],g['mean_followup_90d_6mo']['mean']['ci_lo'],g['mean_followup_90d_6mo']['mean']['ci_hi']),
       ("IPCW-weighted (N=369)",res['ipcw']['ipcw_weighted_primary']['ate'],res['ipcw']['ipcw_weighted_primary']['ci_lo'],res['ipcw']['ipcw_weighted_primary']['ci_hi']),
-      ("Time-aligned index",res['time_aligned']['ate'],res['time_aligned']['ci_lo'],res['time_aligned']['ci_hi']),
+      ("Time-aligned index (N=%d)"%res['time_aligned']['n'],res['time_aligned']['ate'],res['time_aligned']['ci_lo'],res['time_aligned']['ci_hi']),
+      ("Grace-period target trial (N=%d)"%res['target_trial']['n'],res['target_trial']['ate'],res['target_trial']['ci_lo'],res['target_trial']['ci_hi']),
       ("Baseline HbA1c >=8%",res['subgroups']['baseline_ge8']['ate'],res['subgroups']['baseline_ge8']['ci_lo'],res['subgroups']['baseline_ge8']['ci_hi'])]
 fig,ax=plt.subplots(figsize=(9,5.5)); yp=np.arange(len(rows))[::-1]
 for y,(lab,a,l,h) in zip(yp,rows):
