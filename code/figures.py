@@ -2,9 +2,9 @@
 Figure generation. Reads output/results.json (from analysis.py) and the cohort, writes
 to output/figures/:
   figure1_treatment_effects.{png,pdf}  primary/concordant estimates + baseline>=9% trajectory
-  efigure1_ps_distributions.{png,pdf}   propensity-score overlap
-  efigure2_cost_effectiveness.{png,pdf} cost-effectiveness plane (Monte Carlo)
-  efigure3_participant_flow.{png,pdf}   participant flow
+  efigure2_ps_distributions.{png,pdf}   propensity-score overlap
+  efigure3_cost_effectiveness.{png,pdf} cost-effectiveness plane (Monte Carlo)
+  efigure1_participant_flow.{png,pdf}   participant flow
   efigure4_sensitivity_forest.{png,pdf} sensitivity-analysis forest
 """
 import json, warnings
@@ -53,7 +53,7 @@ plt.tight_layout(rect=[0,0.05,1,1])
 for ext in ["png","pdf"]: fig.savefig(FIG/f"figure1_treatment_effects.{ext}",dpi=300,bbox_inches="tight")
 plt.close()
 
-# ===== eFigure 1: PS distributions =====
+# ===== eFigure 2: PS distributions =====
 fig,ax=plt.subplots(figsize=(8,5))
 bins=np.linspace(0,1,21)
 ax.hist(ps[T==1],bins=bins,alpha=0.6,color="#d62728",label=f"Treated (N={int(T.sum())})",density=True)
@@ -61,10 +61,10 @@ ax.hist(ps[T==0],bins=bins,alpha=0.6,color="#2171b5",label=f"Control (N={int((1-
 ax.set_xlabel("Estimated propensity score",fontsize=11); ax.set_ylabel("Density",fontsize=11)
 ax.set_title("Propensity Score Distributions",fontsize=12,fontweight="bold"); ax.legend(fontsize=10)
 plt.tight_layout()
-for ext in ["png","pdf"]: fig.savefig(FIG/f"efigure1_ps_distributions.{ext}",dpi=300,bbox_inches="tight")
+for ext in ["png","pdf"]: fig.savefig(FIG/f"efigure2_ps_distributions.{ext}",dpi=300,bbox_inches="tight")
 plt.close()
 
-# ===== eFigure 2: CE plane =====
+# ===== eFigure 3: CE plane =====
 np.random.seed(42); NS=10000
 fig,ax=plt.subplots(figsize=(8,6))
 recode=[("mi",0.21350,0.082,45000,0.055),("stroke",0.33650,0.055,55000,0.164),("renal",0.13690,0.045,85000,0.078),
@@ -86,10 +86,10 @@ qr=np.linspace(0,max(0.15,ax.get_xlim()[1]),100); ax.plot(qr,qr*50000,color="gre
 ax.set_xlabel("Incremental QALYs",fontsize=11); ax.set_ylabel("Incremental Net Cost ($)",fontsize=11)
 ax.set_title("Cost-Effectiveness Plane",fontsize=12,fontweight="bold"); ax.legend(fontsize=9,loc="upper left")
 plt.tight_layout()
-for ext in ["png","pdf"]: fig.savefig(FIG/f"efigure2_cost_effectiveness.{ext}",dpi=300,bbox_inches="tight")
+for ext in ["png","pdf"]: fig.savefig(FIG/f"efigure3_cost_effectiveness.{ext}",dpi=300,bbox_inches="tight")
 plt.close()
 
-# ===== eFigure 3: participant flow =====
+# ===== eFigure 1: participant flow =====
 fig,ax=plt.subplots(figsize=(8.5,9)); ax.axis("off"); ax.set_xlim(0,10); ax.set_ylim(0,15)
 box=lambda x,y,w,h,t,fc="#eef3f8":(ax.add_patch(FancyBboxPatch((x,y),w,h,boxstyle="round,pad=0.1",fc=fc,ec="black",linewidth=1)),ax.text(x+w/2,y+h/2,t,ha="center",va="center",fontsize=8.6))
 arrow=lambda x1,y1,x2,y2:ax.add_patch(FancyArrowPatch((x1,y1),(x2,y2),arrowstyle="-|>",mutation_scale=14,color="black",linewidth=1))
@@ -103,7 +103,7 @@ side(7.7,6.5,2.1,1.3,"Excluded: missing\ncovariate (N=1);\nPS outside [0.05,0.95
 box(2.5,4.2,5,1.6,"Propensity-score-trimmed cohort\nN = 369 (116 treated, 253 control)",fc="#dde9f5"); arrow(5,4.2,5,3.4)
 box(2.0,1.6,6,1.8,"Primary analytic cohort\nMean HbA1c, follow-up 90-365 d\nN = 369 (116 treated, 253 control)",fc="#cfe0f1")
 ax.text(5,0.7,"Participant flow.",ha="center",fontsize=8.5,style="italic")
-for ext in ["png","pdf"]: fig.savefig(FIG/f"efigure3_participant_flow.{ext}",dpi=300,bbox_inches="tight")
+for ext in ["png","pdf"]: fig.savefig(FIG/f"efigure1_participant_flow.{ext}",dpi=300,bbox_inches="tight")
 plt.close()
 
 # ===== eFigure 4: sensitivity forest =====
